@@ -1,0 +1,60 @@
+/* Custom styles for BookMatcher */
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Gutter line in reader text view */
+.line-gutter {
+  user-select: none;
+  color: #94a3b8;
+  text-align: right;
+  padding-right: 1rem;
+  width: 3.5rem;
+  border-right: 1px solid #e2e8f0;
+}
+
+.line-highlighted {
+  background-color: #fef08a !important; /* amber-200 */
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px #fde047;
+}
+
+/* Heatmap pin pulse */
+.heatmap-marker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background-color: #6366f1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 2px;
+}
+
+.heatmap-marker:hover {
+  background-color: #4338ca;
+  width: 10px;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.8);
+}

@@ -1,0 +1,22 @@
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Data & Uploads (leave local storage out of git)
+data/*.db
+data/uploads/*
+!data/uploads/.gitkeep
+data/sample_textbook.pdf
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
