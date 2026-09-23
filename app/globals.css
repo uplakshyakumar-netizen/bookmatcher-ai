@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.line-highlighted {
+  background-color: #fef08a !important; /* amber-200 */
+  border-radius: 6px;
+  box-shadow: 0 0 0 2px #fde047;
+}
+
+.line-gutter {
+  user-select: none;
+  color: #94a3b8;
+  text-align: right;
+  padding-right: 0.75rem;
+  width: 3rem;
+  border-right: 1px solid #e2e8f0;
+}
+
+.heatmap-marker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background-color: #6366f1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 2px;
+}
+
+.heatmap-marker:hover {
+  background-color: #4338ca;
+  width: 10px;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.8);
+}

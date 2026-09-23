@@ -1,7 +1,7 @@
-# 📖 BookMatcher AI — Intelligent Study Page & Line Pinpointer
+# 📖 BookMatcher AI — Next.js Study Page & Line Pinpointer
 
 > **Hackathon Submission Project**  
-> An AI-powered study platform that indexes massive (~1,000-page) textbooks and automatically discovers the **exact pages and lines** you need to study based on your classroom notes or lecture slides.
+> An AI-powered fullstack Next.js web application that indexes massive (~1,000-page) textbooks and automatically discovers the **exact pages and lines** you need to study based on your classroom notes or lecture slide decks.
 
 ---
 
@@ -10,7 +10,7 @@ Students often sit through lectures and take notes, but textbooks are 800 to 1,2
 
 ## 🚀 The Solution
 **BookMatcher AI** bridges classroom lectures and massive textbooks:
-1. **Upload Textbook (~1,000 pages)**: Fast page and line indexing via PyMuPDF.
+1. **Upload Textbook (~1,000 pages)**: Fast page and line coordinate indexing via pure Node.js (`pdf-parse`).
 2. **Input Notes**: Paste text or **upload lecture slides in PDF format**.
 3. **Instant Exact Page Finder**: Enter any concept or question to immediately get:
    - **The exact page to study** (e.g. `Turn to Page 6`)
@@ -21,12 +21,13 @@ Students often sit through lectures and take notes, but textbooks are 800 to 1,2
 
 ---
 
-## 🛠️ Architecture & Tech Stack
-- **Backend**: FastAPI (Python 3.12)
-- **PDF & Line Extraction**: PyMuPDF (`fitz`) with coordinate bounding boxes
-- **Retrieval Engine**: SQLite FTS5 BM25 + High-Precision Term-Frequency Alignment
+## 🛠️ Fullstack Tech Stack
+- **Framework**: Next.js 14 (App Router)
+- **Frontend**: React 18, HTML5, CSS3, Tailwind CSS, Lucide React
+- **Backend / APIs**: Node.js Route Handlers (`app/api/*`)
+- **PDF Extraction**: `pdf-parse` (pure JavaScript/Node.js)
+- **Retrieval Engine**: `minisearch` (in-memory BM25 full-text search) + JavaScript multi-line sliding-window alignment
 - **AI Enhancement**: Optional Google Gemini API integration
-- **Frontend**: Responsive Single-Page Application (Tailwind CSS + Lucide Icons)
 
 ---
 
@@ -34,12 +35,10 @@ Students often sit through lectures and take notes, but textbooks are 800 to 1,2
 
 ### Run Locally:
 ```bash
-./run.sh
-# Open http://localhost:8000 in your browser
+npm install
+npm run dev
+# Open http://localhost:3000 in your browser
 ```
 
-### Docker:
-```bash
-docker build -t bookmatcher .
-docker run -p 8000:8000 bookmatcher
-```
+### 1-Click Deploy on Vercel:
+Push this repo to GitHub and import it on [Vercel](https://vercel.com) for instant free 24/7 cloud hosting!
