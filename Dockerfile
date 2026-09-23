@@ -1,23 +1,15 @@
-FROM python:3.12-slim
-
+FROM node:20-alpine AS runner
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
+ENV NODE_ENV=production
+ENV PORT=3000
 
-# Install python dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY package*.json ./
+RUN npm install --omit=dev
 
-# Copy application source code
-COPY backend ./backend
-COPY frontend ./frontend
+COPY . .
+RUN npm run build
 
-# Expose port (default 8000)
-ENV PORT=8000
-EXPOSE 8000
+EXPOSE 3000
 
-# Start application
-CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--app-dir", "backend"]
+CMD ["npm", "start"]
