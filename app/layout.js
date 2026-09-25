@@ -1,5 +1,5 @@
 import './globals.css';
-import chatbot from './chatbot';
+import Chatbot from './chatbot';
 
 export const metadata = {
   title: 'BookMatcher AI — Next.js Study Page & Line Pinpointer',
@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="h-full bg-slate-50">
       <body className="h-full flex flex-col font-sans text-slate-800 antialiased selection:bg-indigo-100 selection:text-indigo-800">
         {children}
-      <chatbot /> 
+      <Chatbot /> 
       </body>
     </html>
   );
