@@ -1,15 +1,21 @@
-FROM node:20-alpine AS runner
+# Use a lightweight Node.js environment
+FROM node:18-alpine
+
+# Set the working directory inside the container
 WORKDIR /app
 
-ENV NODE_ENV=production
-ENV PORT=3000
+# Copy package files FIRST to install dependencies
+COPY package.json package-lock.json* ./
+RUN npm install
 
-COPY package*.json ./
-RUN npm install --omit=dev
-
+# Now copy all the rest of your app's code
 COPY . .
+
+# Build the Next.js app
 RUN npm run build
 
+# Expose the port Render uses
 EXPOSE 3000
 
+# Start the application
 CMD ["npm", "start"]
