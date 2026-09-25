@@ -1,4 +1,5 @@
 import './globals.css';
+import chatbot from './chatbot';
 
 export const metadata = {
   title: 'BookMatcher AI — Next.js Study Page & Line Pinpointer',
